@@ -1,11 +1,13 @@
-<div align="center">
-  <img src="assets/Morpheus1.png" alt="Morpheus Threat Detection" width="300"/>
-</div>
-
-<h1 align="center">Morpheus Threat Detection</h1>
+---
 
 <p align="center">
-  <b>GPU-accelerated AI pipeline for real-time threat detection and intelligent security analytics on AWS.</b>
+  <img src="assets/Morpheus1.png" alt="Morpheus Threat Detection" width="380" style="max-width: 100%;"/>
+</p>
+
+# Morpheus Threat Detection
+
+<p align="center">
+  GPU-accelerated AI pipeline for real-time threat detection and intelligent security analytics on AWS.
 </p>
 
 <p align="center">
