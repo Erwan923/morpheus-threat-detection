@@ -1,7 +1,5 @@
----
-
 <p align="center">
-  <img src="assets/Morpheus1.png" alt="Morpheus Threat Detection" width="380" style="max-width: 100%;"/>
+  <img src="assets/Morpheus1.png" alt="Morpheus Threat Detection" width="380"/>
 </p>
 
 # Morpheus Threat Detection
@@ -27,6 +25,8 @@
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square" alt="License">
   </a>
 </p>
+
+---
 
 ## Overview
 
