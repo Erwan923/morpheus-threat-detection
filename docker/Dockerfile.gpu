@@ -1,0 +1,36 @@
+FROM nvcr.io/nvidia/morpheus/morpheus:v25.06-runtime
+
+LABEL maintainer="Erwan Duvillie"
+LABEL description="Morpheus Threat Detection - GPU Accelerated"
+
+# Set working directory
+WORKDIR /workspace
+
+# Install additional dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    vim \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy project files
+COPY requirements.txt .
+COPY src/ ./src/
+COPY examples/ ./examples/
+COPY README.md .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Create results directory
+RUN mkdir -p results
+
+# Expose ports for Triton
+EXPOSE 8000 8001 8002
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/v2/health/ready || exit 1
+
+# Default command
+CMD ["python3", "src/pipelines/threat_detection.py", "--help"]

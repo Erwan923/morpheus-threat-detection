@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'triton'
+    static_configs:
+      - targets: ['triton:8002']
+    
+  - job_name: 'morpheus'
+    static_configs:
+      - targets: ['morpheus:8080']
